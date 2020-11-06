@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
         {
             MovePlayer();
         }
-        
     }
 
     void MovePlayer()
@@ -32,6 +31,6 @@ public class Player : MonoBehaviour
         playerBody.MovePosition(
             transform.position + movement.normalized * _speed * Time.deltaTime
             );
-        Debug.Log(movement * _speed * Time.deltaTime);
+        //Debug.Log(movement * _speed * Time.deltaTime);
     }
 }

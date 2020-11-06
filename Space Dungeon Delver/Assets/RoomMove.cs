@@ -5,13 +5,11 @@ using UnityEngine.Rendering;
 
 public class RoomMove : MonoBehaviour
 {
-    [SerializeField] Camera curRoomCam;
-    [SerializeField] Camera rightRoomCam;
+    [SerializeField] Camera mainCamera;
 
     private void Start()
     {
-        curRoomCam.enabled = true;
-        rightRoomCam.enabled = false;
+        
     }
 
     private void Update()
@@ -21,8 +19,6 @@ public class RoomMove : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        Debug.Log("it worked");
-        curRoomCam.enabled = false;
-        rightRoomCam.enabled = true;
+        
     }
 }
