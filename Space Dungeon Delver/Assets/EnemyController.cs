@@ -69,6 +69,8 @@ public class EnemyController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
 
+    //private bool isEnemyHittingWall()
+
     private IEnumerator ChooseDirection()
     {
         chooseDir = true;
@@ -96,6 +98,11 @@ public class EnemyController : MonoBehaviour
     void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 
     void Attack()

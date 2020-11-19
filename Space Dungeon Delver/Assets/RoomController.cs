@@ -144,7 +144,7 @@ public class RoomController : MonoBehaviour
 
     public void OnPlayerEnterRoom(Room room)
     {
-        Debug.Log("room entered");
+        //Debug.Log("room entered");
         CameraControl.instance.currRoom = room;
         currRoom = room;
         //room.DoubleCheckWalls();
