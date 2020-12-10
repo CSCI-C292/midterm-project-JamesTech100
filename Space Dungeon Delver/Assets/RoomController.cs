@@ -14,7 +14,7 @@ public class RoomController : MonoBehaviour
 {
     public static RoomController instance;
 
-    string currentFloorName = "Floor 1";
+    string currentFloorName = "Floor 1"; 
 
     RoomInformation currentLoadRoomData;
 
