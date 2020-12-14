@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
-    private static int health = 10;
-    private static int maxHealth = 10;
+    private static int health = 5;
+    private static int maxHealth = 5;
 
     public static int Health { get => health; set => health = value; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }

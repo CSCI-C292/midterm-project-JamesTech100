@@ -13,6 +13,13 @@ public class Player : MonoBehaviour
     private float lastFire;
     public float fireDelay;
 
+    public GameObject charSpriteR;
+    public GameObject charSpriteL;
+    public GameObject gunSpriteR;
+    public GameObject gunSpriteL;
+    public GameObject gunSpriteU;
+    public GameObject gunSpriteD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +46,52 @@ public class Player : MonoBehaviour
         {
             MovePlayer();
         }
+
+        updateSprite(shootHor, shootVert, movement.x);
+    }
+
+    void updateSprite(float shootHoriz, float shootVertic, float moveHoriz)
+    {
+        if (shootHoriz > 0)                     // Changes the sprite by whichever direction the character shoots
+        {
+            gunSpriteR.gameObject.SetActive(true);
+            gunSpriteL.gameObject.SetActive(false);
+            gunSpriteU.gameObject.SetActive(false);
+            gunSpriteD.gameObject.SetActive(false);
+        } else if (shootHoriz < 0)
+        {
+            gunSpriteR.gameObject.SetActive(false);
+            gunSpriteL.gameObject.SetActive(true);
+            gunSpriteU.gameObject.SetActive(false);
+            gunSpriteD.gameObject.SetActive(false);
+        } else if (shootVertic > 0)
+        {
+            gunSpriteR.gameObject.SetActive(false);
+            gunSpriteL.gameObject.SetActive(false);
+            gunSpriteU.gameObject.SetActive(true);
+            gunSpriteD.gameObject.SetActive(false);
+        } else if (shootVertic < 0)
+        {
+            gunSpriteR.gameObject.SetActive(false);
+            gunSpriteL.gameObject.SetActive(false);
+            gunSpriteU.gameObject.SetActive(false);
+            gunSpriteD.gameObject.SetActive(true);
+        }
+
+        if(moveHoriz == 0)                      // Changes character sprite by how the character moves horizontally
+        {
+            return;
+        } else if(moveHoriz > 0)
+        {
+            charSpriteR.SetActive(true);
+            charSpriteL.SetActive(false);
+        } else if(moveHoriz < 0)
+        {
+            charSpriteR.SetActive(false);
+            charSpriteL.SetActive(true);
+        }
+
+
     }
 
     void MovePlayer()

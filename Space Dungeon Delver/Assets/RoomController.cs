@@ -147,6 +147,7 @@ public class RoomController : MonoBehaviour
         //Debug.Log("room entered");
         CameraControl.instance.currRoom = room;
         currRoom = room;
+        //-----SpawnRandomEnemies();
         //room.DoubleCheckWalls();
     }
 }
